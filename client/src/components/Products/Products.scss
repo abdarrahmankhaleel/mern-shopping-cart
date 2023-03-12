@@ -1,0 +1,33 @@
+.products-wrapper{
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+
+.product-item{
+    width: 20%;
+    background-color: rgba(250, 235, 215, 0.635);
+    padding: 10px;
+}
+
+.product-item img{
+    width: 100%;
+    height: 250;
+}
+
+.product-item .info{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.product-item button{
+    border: 0;
+    background: rgb(31, 202, 145);
+
+    padding: 10px;
+    border-radius: 5px;
+
+}
