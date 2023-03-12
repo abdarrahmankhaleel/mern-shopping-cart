@@ -1,12 +1,30 @@
 
 import React  from 'react';
+import Modal from 'react-modal';
+import { useState } from 'react';
 import '../../css/Products/Products.css'
+
+
+
 const Products = (props) => {
+    const [product,setProduct]=useState("");
+
+  const  openModal=(product)=>{
+         setProduct(product);
+    }
+  const closeModal=()=>{
+         setProduct(false);
+    }
+    
   return (
     <div className='products-wrapper'>
     {props.products.map(product=>(
         <div className='product-item' key={product.id}>
-            <img src={product.imageUrl}/>
+            <a href='#' onClick={()=>openModal(product)}>
+
+             <img src={product.imageUrl}/>
+
+            </a>
             <div className='info'> 
                 <p className='title'>{product.title}</p>
                 <p className='price'>{product.price}</p>
@@ -15,6 +33,12 @@ const Products = (props) => {
         </div>
         )
     )}
+
+
+ <ProductModel product={product} closeModal={closeModal}/>
+    
+
+
     </div>
   )
 }
