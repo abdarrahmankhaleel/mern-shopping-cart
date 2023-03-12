@@ -21,12 +21,3 @@
 main{
   grid-area: main;
 }
-footer{
-  grid-area: footer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: larger;
-  color: white;
-  background-color: aqua;
-}
