@@ -3,6 +3,7 @@ import React  from 'react';
 import Modal from 'react-modal';
 import { useState } from 'react';
 import '../../css/Products/Products.css'
+import ProductModal from './ProductModal';
 
 
 
@@ -35,7 +36,7 @@ const Products = (props) => {
     )}
 
 
- <ProductModel product={product} closeModal={closeModal}/>
+ <ProductModal product={product} closeModal={closeModal}/>
     
 
 

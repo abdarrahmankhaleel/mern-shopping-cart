@@ -4,6 +4,7 @@ import Footer from './components/Footer/Footer';
 import './index.css'
 import Products from './components/Products/Products';
 import data from './/data/data.json';
+import Filter from './components/Filter/Filter';
 function App() {
   const [products,setProducts]=useState(data);
   console.log(products);
@@ -12,9 +13,7 @@ function App() {
       <Header/>
       <main className='wrapper'>
       <Products products={products}/>
-        <div className='filter-wrapper'>
-          filter
-        </div>
+       <Filter/>
       </main>
 
      <Footer/>
