@@ -1,8 +1,11 @@
 import React from 'react'
 import '../../css/Footer/Footer.css'
+import { words } from '../../data/words'
 const Footer = () => {
   return (
-    <footer>&copy; All Right Resirved</footer>
+    <footer>
+      {words.footertitle}
+    </footer>
   )
 }
 
