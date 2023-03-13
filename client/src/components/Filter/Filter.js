@@ -7,7 +7,7 @@ const Filter = (prop) => {
         <p>Number All Products :4 Products</p>
         <div className='filter-size'>
             <label>Size</label>
-            <select onChange={prop.filterBySize}>
+            <select value={prop.sort} onChange={prop.filterBySize}>
                 <option value="all">All</option>
                 <option value="S">S</option>
                 <option value="M">M</option>
@@ -18,14 +18,11 @@ const Filter = (prop) => {
         </div>
         <div className='filter-order'>
             <label>order</label>
-            <select onChange={prop.sorting}>
+            <select value={prop.filter} onChange={prop.sorting}>
             <option value="">hojv</option>
                 <option value="latest">Latest</option>
                 <option value="lowest">lowest</option>
                 <option value="hist">Hightest</option>
-
-              
-              
             </select>
         </div>
   </div>
