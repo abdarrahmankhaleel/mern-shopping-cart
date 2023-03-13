@@ -40,7 +40,7 @@ const addToCart = (product) => {
     }
   })
   if(!isProductExist) {
-    cartItemsClone.push({...product, qty: 1,totalPrice:product.qty*product.price})
+    cartItemsClone.push({...product, qty: 1,totalPrice:product.price})
   }
   setCartItems(cartItemsClone);
 }

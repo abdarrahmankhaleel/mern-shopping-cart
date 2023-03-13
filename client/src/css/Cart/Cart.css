@@ -53,7 +53,48 @@
     border-radius: 6px;
   }
 
+  .checkout-form {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px;
+    background-color: #ddd;
+  
+  
+  }
 
+  
+  
+  .checkout-form .close-icon {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .checkout-form  form {
+    width: 60%;
+    margin: auto;
+
+    
+  }
+
+
+  .checkout-form  form > div {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+  }
+  input {
+    height: 40px;
+    padding: 5px;
+    border: 1px solid #c0c0c0;
+  }
+  button {
+    cursor: pointer;
+    height: 40px;
+  }
 /*   
   .order-info {
     display: flex;

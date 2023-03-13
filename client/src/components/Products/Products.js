@@ -1,7 +1,7 @@
 
 import React  from 'react';
-import Modal from 'react-modal';
 import { useState } from 'react';
+import Modal from 'react-modal';
 import '../../css/Products/Products.css'
 import ProductModal from './ProductModal';
 
