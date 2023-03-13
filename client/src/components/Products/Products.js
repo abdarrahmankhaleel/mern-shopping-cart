@@ -3,6 +3,7 @@ import React  from 'react';
 import Modal from 'react-modal';
 import { useState } from 'react';
 import '../../css/Products/Products.css'
+import ProductModal from './ProductModal';
 
 
 
@@ -29,13 +30,13 @@ const Products = (props) => {
                 <p className='title'>{product.title}</p>
                 <p className='price'>{product.price}</p>
             </div>
-            <button>Add To Cart</button>
+            <button onClick={()=>props.addToCart(product)}>Add To Cart</button>
         </div>
         )
     )}
 
 
- <ProductModel product={product} closeModal={closeModal}/>
+ <ProductModal product={product} closeModal={closeModal}/>
     
 
 
