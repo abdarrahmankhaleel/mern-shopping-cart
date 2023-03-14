@@ -6,6 +6,9 @@ import Products from './components/Products/Products';
 import data from './/data/data.json';
 import Filter from './components/Filter/Filter';
 import Cart from './components/Cart/Cart';
+import Counter from './components/Counter/Counter';
+import { Provider } from 'react-redux';
+import store from './store/store';
 function App() {
   const [products,setProducts]=useState(data);
   const [sort,setsort]=useState("");
@@ -92,15 +95,20 @@ const sorting=(e)=>{
 }
 
   return (
+    <Provider store={store}>
     <div className="App">
-      <Header/>
+      {/* <Header/>
       <main className='wrapper'>
       <Products products={products} addToCart={addToCart}/>
        <Filter sorting={sorting} sort={sort} filter={filter} filterBySize={filterBySize}/>
       </main>
       <Cart cartItems={cartItems} removeFromCart={removeFromCart}/>
-     <Footer/>
+     <Footer/> */}
+
+     <Counter/>
     </div>
+
+    </Provider>
   );
 }
 
