@@ -97,15 +97,15 @@ const sorting=(e)=>{
   return (
     <Provider store={store}>
     <div className="App">
-      {/* <Header/>
+       <Header/>
       <main className='wrapper'>
       <Products products={products} addToCart={addToCart}/>
        <Filter sorting={sorting} sort={sort} filter={filter} filterBySize={filterBySize}/>
       </main>
       <Cart cartItems={cartItems} removeFromCart={removeFromCart}/>
-     <Footer/> */}
+     <Footer/> 
 
-     <Counter/>
+     {/* <Counter/> */}
     </div>
 
     </Provider>

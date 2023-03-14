@@ -1,8 +1,10 @@
 
-import React  from 'react';
+import { connect } from 'react-redux';
+import React, { useEffect }  from 'react';
 import { useState } from 'react';
 import Modal from 'react-modal';
 import '../../css/Products/Products.css'
+import {fetchProductsAction} from '../../store/Actions/ProductAction';
 import ProductModal from './ProductModal';
 
 
@@ -16,10 +18,14 @@ const Products = (props) => {
   const closeModal=()=>{
          setProduct(false);
     }
+
+    useEffect(()=>{
+      props.fetchProductsAction()
+    },[]);
     
   return (
     <div className='products-wrapper'>
-    {props.products.map(product=>(
+    {props.products && props.products.length ? props.products.map(product=>(
         <div className='product-item' key={product.id}>
             <a href='#' onClick={()=>openModal(product)}>
 
@@ -33,7 +39,7 @@ const Products = (props) => {
             <button onClick={()=>props.addToCart(product)}>Add To Cart</button>
         </div>
         )
-    )}
+    ):"looogding .... "}
 
 
  <ProductModal product={product} closeModal={closeModal}/>
@@ -44,4 +50,8 @@ const Products = (props) => {
   )
 }
 
-export default Products
+export default connect((state)=>{
+ return{
+   products:state.products.filterdProducts
+ }
+  },{fetchProductsAction})(Products)
