@@ -5,6 +5,7 @@ import { useState } from 'react';
 import Modal from 'react-modal';
 import '../../css/Products/Products.css'
 import {fetchProductsAction} from '../../store/Actions/ProductAction';
+import {addToCart} from '../../store/Actions/cartAction';
 import ProductModal from './ProductModal';
 
 
@@ -54,4 +55,7 @@ export default connect((state)=>{
  return{
    products:state.products.filterdProducts
  }
-  },{fetchProductsAction})(Products)
+  },{
+    fetchProductsAction,
+    addToCart
+  })(Products)
