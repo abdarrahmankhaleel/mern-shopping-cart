@@ -2,6 +2,8 @@
 import React  from 'react';
 import { useState } from 'react';
 import '../../css/Cart/Cart.css'
+import {removeFromCartAction,addToCart} from '../../store/Actions/cartAction'
+import {connect} from 'react-redux'
 const Cart = (props) => {
 
 const [showForm,setShowForm]=useState(false);
@@ -26,6 +28,7 @@ const submitForm=(e)=>{
 }
 
 
+
   return (
 
 
@@ -45,7 +48,7 @@ const submitForm=(e)=>{
                             <p> price: ${item.price} </p>
                             <p> total price: ${item.totalPrice} </p>
                         </div>
-                        <button onClick={() => props.removeFromCart(item)}>
+                        <button onClick={() => props.removeFromCartAction(item)}>
                                 Remove
                         </button>
                     </div>
@@ -110,4 +113,11 @@ const submitForm=(e)=>{
   )
 }
 
-export default Cart
+export default connect((state)=>{
+    return{
+        cartItems:state.cart.cartItems
+    }
+},{
+    removeFromCartAction,
+ 
+}) (Cart)
